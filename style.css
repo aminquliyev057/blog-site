@@ -95,3 +95,11 @@ body{
 
 }
 
+.sidebar nav ul li a.active{
+    background-color: rgba(129, 119, 119, 0.1);
+    border-radius:  0 10px 10px 0;
+    color: rgb(180, 139, 64); 
+    border-left: 3px solid rgb(180, 139, 64)     ;
+
+}
+
