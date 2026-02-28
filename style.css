@@ -103,3 +103,75 @@ body{
 
 }
 
+
+.about-page{
+    display: flex;
+    flex-direction: column;
+    min-height: 95vh;
+    margin-left: 25%;
+    width: 50%;
+
+}
+
+.main-content {
+    flex: 1; 
+    padding: 60px;
+}
+
+.main-content h1 {
+    color: rgb(185, 135, 42);
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.main-content p{
+    color: rgb(230, 220, 220);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    
+}
+
+.about-page footer {
+    display: flex;
+    align-items: left;
+    margin-top: 50px;
+    border-top: 1px solid #636060;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #636060;
+}
+
+.about-page footer a{
+    color: rgb(165, 156, 156);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-page footer a:hover{
+    text-decoration: underline;
+}
+
+
+.breadcrumb {
+    display: flex;
+    padding:20px; 
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #333;
+}
+
+.breadcrumb .path {
+    color: #888;
+}
+
+.breadcrumb a {
+    color: rgb(185, 135, 42);
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
