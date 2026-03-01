@@ -1,5 +1,10 @@
+* {
+    box-sizing: border-box; /* The most important rule for layout */
+}
+
 body{
-    background-color: rgb(24, 22, 22)
+    background-color: rgb(24, 22, 22);
+    margin: 0;
 }
 
 .sidebar{
@@ -7,13 +12,12 @@ body{
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-
-    position: fixed;
     background-color: rgb(29, 28, 28);
-    height: 100vh;
     width: 250px;
-    top: 0;
-    left: 0;
+    height: 100vh;
+    position: sticky;
+        
+
 
 }
 
@@ -105,11 +109,10 @@ body{
 
 
 .about-page{
+    
     display: flex;
-    flex-direction: column;
-    min-height: 95vh;
-    margin-left: 25%;
-    width: 50%;
+    flex-direction: row;
+
 
 }
 
@@ -120,6 +123,8 @@ body{
 .about-content{
     display: flex;
     flex-direction: column;
+    border-top: 1px solid #333;
+    width: 900px
 
 }
 #page-header {
@@ -145,6 +150,8 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
     color: #636060;
+    margin-top: auto;
+    max-width: 900px
 }
 
 .page-footer a{
@@ -163,7 +170,8 @@ body{
     padding:20px; 
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.9rem;
-    border-bottom: 1px solid #333;
+    
+
 }
 
 .breadcrumb .path {
@@ -181,12 +189,11 @@ body{
 }
 
 .home-page{
+    border-top: 1px solid #333;
     display: flex;
     flex-direction: column;
-    min-height: 95vh;
-    margin-left: 25%;
-    width: 50%;
-
+    width: 70%;
+    
 }
 
 .home-container{
@@ -197,6 +204,7 @@ body{
     display: flex;
     flex-direction: column;
     gap: 15px;
+
 }
 
 .card-container a{
@@ -215,6 +223,7 @@ body{
     border-radius: 10px;
     border: 1px solid rgb(46, 41, 41);
     min-height: 200px;
+
 }
 
 .card:hover{
@@ -260,11 +269,115 @@ body{
     background-position: center; 
     background-repeat: no-repeat;
 
-    width: 200px;        /* Keep the width fixed */
+    width: 200px;
     height: auto;
     flex-shrink: 0;
-
-    
-
 }
 
+.container-wrapper { 
+    display: flex;
+    flex-direction: row;
+}
+
+.page-wrapper{
+    display: flex;
+    flex-direction: row;
+    
+    min-height: 100vh;
+}
+
+.content-area{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    padding: 0 10%;
+    min-width: 0;
+
+    
+}
+
+.recent-posts{
+    padding: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid #333;
+    margin-left: 40px;
+    height: fit-content;
+}
+
+.recent-posts h4{
+    padding: 0;
+    margin: 0 0 10px 0;
+
+    color: rgb(185, 135, 42);
+    font-family: Arial, Helvetica, sans-serif;
+}
+.recent-posts ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    color: rgb(139, 139, 139);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+.recent-posts a{
+    text-decoration: none;
+    color: rgb(158, 151, 151);
+}
+.recent-posts a:hover{
+    text-decoration: underline;
+    color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+    /* 1. Turn the horizontal layout into a vertical stack */
+    .page-wrapper, 
+    .container-wrapper, 
+    .about-page,
+    .card {
+        flex-direction: column !important;
+    }
+
+    /* 2. Fix the Sidebar (Make it a top header instead) */
+    .sidebar {
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        padding: 20px 10px;
+    }
+
+    .avatar {
+        width: 80px;
+        height: 80px;
+        margin-top: 20px;
+    }
+
+    /* 3. Remove the 900px restriction so it fits the phone */
+    .content-area,
+    .home-page,
+    .about-content,
+    .page-footer {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 10px 20px !important;
+        margin-left: 0 !important; /* Removes that 10% gap */
+    }
+
+    /* 4. Fix the Cards */
+    .card-thumbnail {
+        width: 100% !important;
+        height: 150px;
+    }
+
+    /* 5. Handle the right sidebar (Recent Posts) */
+    .recent-posts {
+        width: 100% !important;
+        margin-left: 0 !important;
+        border-left: none !important;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+    }
+}
