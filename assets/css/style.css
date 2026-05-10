@@ -22,7 +22,7 @@ body{
 }
 
 .avatar{
-    background-image: url('public/avatar.jpg');
+    background-image: url('/assets/img/avatar.jpg');
     background-size: cover;     
     background-position: center; 
     background-repeat: no-repeat;
@@ -200,16 +200,36 @@ body{
     flex:1;
 }
 
-.card-container{
+#card-container{
     display: flex;
     flex-direction: column;
     gap: 15px;
-
+    max-height: 80vh;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    padding-right: 10px;
 }
 
-.card-container a{
+#card-container a{
     text-decoration: none;
-    overflow: hidden;
+}
+
+#card-container::-webkit-scrollbar {
+    width: 8px;
+}
+
+#card-container::-webkit-scrollbar-track {
+    background: #1a1a1a; 
+    border-radius: 10px;
+}
+
+#card-container::-webkit-scrollbar-thumb {
+    background: #b9872a; 
+    border-radius: 10px;
+}
+
+#card-container::-webkit-scrollbar-thumb:hover {
+    background: #d4a03d; 
 }
 
 
@@ -264,7 +284,7 @@ body{
 }
 
 .card-thumbnail{
-    background-image: url(public/avatar.jpg);
+
     background-size: cover;     
     background-position: center; 
     background-repeat: no-repeat;
@@ -296,7 +316,7 @@ body{
     
 }
 
-.recent-posts{
+#recent-posts{
     padding: 10px;
     margin-top: 20px;
     display: flex;
@@ -306,14 +326,14 @@ body{
     height: fit-content;
 }
 
-.recent-posts h4{
+#recent-posts h4{
     padding: 0;
     margin: 0 0 10px 0;
 
     color: rgb(185, 135, 42);
     font-family: Arial, Helvetica, sans-serif;
 }
-.recent-posts ul{
+#recent-posts ul{
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -322,11 +342,11 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
 }
-.recent-posts a{
+#recent-posts a{
     text-decoration: none;
     color: rgb(158, 151, 151);
 }
-.recent-posts a:hover{
+#recent-posts a:hover{
     text-decoration: underline;
     color: white;
 }
