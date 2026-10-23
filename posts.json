@@ -6,7 +6,7 @@
             "description": "FriendZone is an easy difficulty Linux box which needs fair amount enumeration. By doing a zone transfer vhosts are discovered...",
             "date": "Oct 24, 2026",
             "tag": "Write-up",
-            "link": "/posts.html?postid=1",
+            "link": "posts.html?postid=1",
             "thumbnail":"friendzone.png"
         }
     ]

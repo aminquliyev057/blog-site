@@ -1,5 +1,5 @@
 window.loadSiteContent = () => {
-    fetch('/posts.json')
+    fetch('posts.json')
         .then(response => response.json())
         .then(data => {
 
@@ -34,8 +34,8 @@ document.addEventListener('DOMContentLoaded', window.loadSiteContent);
 function renderCards(posts, container) {
     posts.forEach(element => {
         const thumbUrl = element.thumbnail
-            ? `/assets/img/thumbnails/${encodeURIComponent(element.thumbnail)}`
-            : '/assets/img/avatar.jpg';
+            ? `assets/img/thumbnails/${encodeURIComponent(element.thumbnail)}`
+            : 'assets/img/avatars/avatar.jpg';
 
         let icon = (element.tag == 'Post') ? 'fas fa-book-open' : 'fas fa-user-secret'
         const card = `
