@@ -5,72 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Amin Guliyev</title>
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
-
 </head>
 
 <body>
     <div class="page-wrapper">
         <aside class="sidebar">
-
             <div class="sidebar-content">
                 <div class="avatar"></div>
-
                 <h1>Amin Guliyev</h1>
-
-                <nav>
+                <nav aria-label="Main navigation">
                     <ul>
-                        <li><a href="index.html"><i class="fa-sharp fa-solid fa-house"></i> HOME</a></li>
-                        <li><a href="posts.html"><i class="fas fa-book-open"></i> POSTS</a></li>
-                        <li><a href="write-up.html"><i class="fas fa-user-secret"></i> WRITE-UPS</a></li>
-                        <li><a href="about.html" class="active"><i class="fa-solid fa-circle-info"></i> ABOUT</a></li>
+                        <li><a href="posts.html"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> POSTS</a></li>
+                        <li><a href="certifications.html"><i class="fa-solid fa-award" aria-hidden="true"></i> CERTIFICATIONS</a></li>
+                        <li><a href="security-research.html"><i class="fa-solid fa-flask" aria-hidden="true"></i> SECURITY RESEARCH</a></li>
+                        <li><a href="about.html" class="active" aria-current="page"><i class="fa-solid fa-user" aria-hidden="true"></i> ABOUT</a></li>
                     </ul>
                 </nav>
+                <label class="rain-toggle" for="rain-toggle">
+                    <input id="rain-toggle" type="checkbox" role="switch" aria-label="Toggle rain animation">
+                    <span class="rain-toggle-track" aria-hidden="true"></span>
+                    <span>Rain effect</span>
+                </label>
             </div>
-
             <footer>
-                <a href="https://www.linkedin.com/in/amin-quliyev-867aba341/"><i class="fa-brands fa-linkedin"></i></a>|
-                <a href="https://github.com/aminquliyev057"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/amin-quliyev-867aba341/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://github.com/aminquliyev057" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                <a class="profile-link tryhackme-link" href="https://tryhackme.com/p/AminQuliyev" aria-label="TryHackMe" title="TryHackMe" target="_blank" rel="noopener noreferrer"><img src="assets/img/icons/tryhackme.svg" alt="" aria-hidden="true"></a>
+                <a class="profile-link hackthebox-link" href="https://app.hackthebox.com/users/2365632" aria-label="Hack The Box" title="Hack The Box" target="_blank" rel="noopener noreferrer"><img src="assets/img/icons/hackthebox.svg" alt="" aria-hidden="true"></a>
             </footer>
         </aside>
 
         <div class="content-area">
-
             <nav class="breadcrumb">
-                <span class="path"><a href="index.html">Home</a> > About</span>
+                <span class="path"><a href="index.html">Home</a> &gt; About</span>
             </nav>
-
             <div class="container-wrapper">
                 <main class="about-page">
-                        <section class="about-content">
-                            <h1 id="page-header">About</h1>
-                            <p>Hi, I'm Amin</p>
-                        </section>
-
-                    <aside id="recent-posts">
-                        <h4>Recently posted</h4>
-                        <ul>
-                        </ul>
-                    </aside>
+                    <section class="about-content">
+                        <h1 id="page-header">About Me</h1>
+                        <p>Hi, I'm Amin.</p>
+                    </section>
                 </main>
-
+                <aside id="recent-posts">
+                    <h4>Recently posted</h4>
+                    <ul></ul>
+                </aside>
             </div>
-
-            <footer class="page-footer">
-                <p>&copy; 2026 <a href="https://github.com/aminquliyev05">Amin Guliyev</a>. All
-                    rights reserved.</p>
-            </footer>
-
         </div>
-
-
-
     </div>
-
-
+    <footer class="page-footer">
+        <section class="music-player" aria-label="Instrumental music player">
+            <button class="music-control" id="previous-track" type="button" aria-label="Previous track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h2v14H5zM20 5 9 12l11 7z"></path></svg></button>
+            <button class="music-control music-play" id="toggle-playback" type="button" aria-label="Play" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"></path></svg></button>
+            <button class="music-control" id="next-track" type="button" aria-label="Next track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5h2v14h-2zM4 5l11 7-11 7z"></path></svg></button>
+            <div class="music-track-details">
+                <label for="instrumental-select">Now playing</label>
+                <select id="instrumental-select" aria-label="Select an instrumental"></select>
+            </div>
+            <span class="music-time" id="elapsed-time">0:00</span>
+            <input class="music-progress" id="music-progress" type="range" min="0" max="100" value="0" aria-label="Track progress">
+            <span class="music-time" id="duration-time">0:00</span>
+            <span class="music-status" id="music-status" role="status" aria-live="polite"></span>
+            <audio id="instrumental-audio" preload="none"></audio>
+        </section>
+    </footer>
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/music-player.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <canvas id="rain-canvas" aria-hidden="true"></canvas>
+    <script src="assets/js/rain-effect.js"></script>
 </body>
-
-<script src="/assets/js/script.js"></script>
 
 </html>

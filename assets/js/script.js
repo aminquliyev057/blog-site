@@ -1,12 +1,12 @@
-window.onload = () => {
+window.loadSiteContent = () => {
     fetch('/posts.json')
         .then(response => response.json())
         .then(data => {
 
-            let cardContainer = document.querySelector('#card-container')
-            let recentPosts = document.querySelector('#recent-posts ul')
+            const cardContainer = document.querySelector('#card-container')
+            const recentPosts = document.querySelector('#recent-posts ul')
 
-            let posts = data.posts
+            const posts = data.posts
 
             posts.sort((a, b) => {
                 const dateA = new Date(a.date)
@@ -17,26 +17,25 @@ window.onload = () => {
             })
 
             if (cardContainer) {
+                cardContainer.innerHTML = ''
                 renderCards(posts, cardContainer)
-
             }
 
             if (recentPosts) {
+                recentPosts.innerHTML = ''
                 renderRecentBar(posts, recentPosts)
             }
-
-
-
-        }
-
-        )
+        })
         .catch(error => console.error('Error:', error));
-
 }
+
+document.addEventListener('DOMContentLoaded', window.loadSiteContent);
 
 function renderCards(posts, container) {
     posts.forEach(element => {
-        const thumbUrl = element.thumbnail || '/assets/img/avatar.jpg';
+        const thumbUrl = element.thumbnail
+            ? `/assets/img/thumbnails/${encodeURIComponent(element.thumbnail)}`
+            : '/assets/img/avatar.jpg';
 
         let icon = (element.tag == 'Post') ? 'fas fa-book-open' : 'fas fa-user-secret'
         const card = `
