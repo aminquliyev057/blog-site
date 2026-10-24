@@ -1,13 +1,14 @@
 {
     "posts": [
         {
-            "id": 1,
+            "slug": "friendzone",
             "title": "HTB: FriendZone 💔",
             "description": "FriendZone is an easy difficulty Linux box which needs fair amount enumeration. By doing a zone transfer vhosts are discovered...",
-            "date": "Oct 24, 2026",
+            "date": "2026-10-25",
             "tag": "Write-up",
-            "link": "posts.html?postid=1",
-            "thumbnail":"friendzone.png"
+            "link": "post.html?slug=friendzone",
+            "markdown": "posts/friendzone/friendzone.md",
+            "thumbnail": "assets/img/thumbnails/friendzone.png"
         }
     ]
 }

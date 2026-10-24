@@ -14,8 +14,14 @@
         <aside class="sidebar">
             <div class="sidebar-content">
                 <div class="avatar"></div>
+
                 <h1>Amin Guliyev</h1>
-                <nav aria-label="Main navigation">
+
+                <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation" title="Open navigation menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav id="main-navigation" aria-label="Main navigation">
                     <ul>
                         <li><a href="posts.html"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> POSTS</a></li>
                         <li><a href="certifications.html" class="active" aria-current="page"><i class="fa-solid fa-award" aria-hidden="true"></i> CERTIFICATIONS</a></li>
@@ -26,7 +32,7 @@
                 <label class="rain-toggle" for="rain-toggle">
                     <input id="rain-toggle" type="checkbox" role="switch" aria-label="Toggle rain animation">
                     <span class="rain-toggle-track" aria-hidden="true"></span>
-                    <span>Rain effect</span>
+                    <span>Rain</span>
                 </label>
             </div>
             <footer>

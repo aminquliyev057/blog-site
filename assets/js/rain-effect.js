@@ -92,9 +92,10 @@
         }
     };
 
-    let savedPreference = false;
+    let savedPreference = true;
     try {
-        savedPreference = window.localStorage.getItem(storageKey) === 'true';
+        const storedPreference = window.localStorage.getItem(storageKey);
+        savedPreference = storedPreference === null || storedPreference === 'true';
     } catch (error) {
         console.warn('Could not read rain effect preference:', error);
     }

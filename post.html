@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse a Markdown post from Amin Guliyev.">
+    <title>Post | Amin Guliyev</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+
+<body id="top">
+    <div class="page-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-content">
+                <div class="avatar"></div>
+                <h1>Amin Guliyev</h1>
+
+                <button class="mobile-menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-navigation" title="Open navigation menu">
+                    <i class="fa-solid fa-bars" aria-hidden="true"></i>
+                </button>
+
+                <nav id="main-navigation" aria-label="Main navigation">
+                    <ul>
+                        <li><a href="posts.html" class="active" aria-current="page"><i class="fa-solid fa-file-lines" aria-hidden="true"></i> POSTS</a></li>
+                        <li><a href="certifications.html"><i class="fa-solid fa-award" aria-hidden="true"></i> CERTIFICATIONS</a></li>
+                        <li><a href="security-research.html"><i class="fa-solid fa-flask" aria-hidden="true"></i> SECURITY RESEARCH</a></li>
+                        <li><a href="about.html"><i class="fa-solid fa-user" aria-hidden="true"></i> ABOUT</a></li>
+                    </ul>
+                </nav>
+
+                <label class="rain-toggle" for="rain-toggle">
+                    <input id="rain-toggle" type="checkbox" role="switch" aria-label="Toggle rain animation">
+                    <span class="rain-toggle-track" aria-hidden="true"></span>
+                    <span>Rain</span>
+                </label>
+            </div>
+
+            <footer>
+                <a href="https://www.linkedin.com/in/amin-quliyev-867aba341/" aria-label="LinkedIn" title="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i></a>
+                <a href="https://github.com/aminquliyev057" aria-label="GitHub" title="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i></a>
+                <a class="profile-link tryhackme-link" href="https://tryhackme.com/p/AminQuliyev" aria-label="TryHackMe" title="TryHackMe" target="_blank" rel="noopener noreferrer"><img src="assets/img/icons/tryhackme.svg" alt="" aria-hidden="true"></a>
+                <a class="profile-link hackthebox-link" href="https://app.hackthebox.com/users/2365632" aria-label="Hack The Box" title="Hack The Box" target="_blank" rel="noopener noreferrer"><img src="assets/img/icons/hackthebox.svg" alt="" aria-hidden="true"></a>
+            </footer>
+        </aside>
+
+        <div class="content-area">
+            <nav class="breadcrumb">
+                <span class="path"><a href="index.html">Home</a> &gt; <a href="posts.html">Posts</a> &gt; <span id="post-breadcrumb-title">Post</span></span>
+            </nav>
+
+            <div class="container-wrapper">
+                <main class="home-page">
+                    <article class="post-article">
+                        <h1 id="page-header">Loading post…</h1>
+                        <p class="post-article-meta"></p>
+                        <div id="post-content" class="post-article-content" aria-live="polite">Loading post…</div>
+                    </article>
+                </main>
+
+                <aside id="recent-posts">
+                    <h4>Recently posted</h4>
+                    <ul id="recent-post-list"></ul>
+                    <section id="post-toc" hidden>
+                        <h4>On this page</h4>
+                        <nav aria-label="Post sections">
+                            <ul id="post-toc-list"></ul>
+                        </nav>
+                    </section>
+                    <a class="back-to-top" href="#top" hidden>
+                        <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+                        Back to top
+                    </a>
+                </aside>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <section class="music-player" aria-label="Instrumental music player">
+            <button class="music-control" id="previous-track" type="button" aria-label="Previous track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5h2v14H5zM20 5 9 12l11 7z"></path></svg></button>
+            <button class="music-control music-play" id="toggle-playback" type="button" aria-label="Play" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"></path></svg></button>
+            <button class="music-control" id="next-track" type="button" aria-label="Next track"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17 5h2v14h-2zM4 5l11 7-11 7z"></path></svg></button>
+            <div class="music-track-details">
+                <label for="instrumental-select">Now playing</label>
+                <select id="instrumental-select" aria-label="Select an instrumental"></select>
+            </div>
+            <span class="music-time" id="elapsed-time">0:00</span>
+            <input class="music-progress" id="music-progress" type="range" min="0" max="100" value="0" aria-label="Track progress">
+            <span class="music-time" id="duration-time">0:00</span>
+            <span class="music-status" id="music-status" role="status" aria-live="polite"></span>
+            <audio id="instrumental-audio" preload="none"></audio>
+        </section>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/music-player.js"></script>
+    <script src="assets/js/navigation.js"></script>
+    <canvas id="rain-canvas" aria-hidden="true"></canvas>
+    <script src="assets/js/rain-effect.js"></script>
+</body>
+
+</html>
