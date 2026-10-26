@@ -235,6 +235,26 @@ const formatPostDate = date => {
     });
 };
 
+const appendPostTitle = (element, post) => {
+    const heartIndex = post.slug === 'friendzone' ? post.title.lastIndexOf('💔') : -1;
+    if (heartIndex === -1) {
+        element.textContent = post.title;
+        return;
+    }
+
+    const heart = document.createElement('span');
+    heart.className = 'post-title-heart';
+    heart.textContent = '💔';
+    heart.title = 'Maybe in another universe...';
+    heart.setAttribute('role', 'img');
+    heart.setAttribute('aria-label', 'Broken heart: Maybe in another universe...');
+    element.replaceChildren(
+        document.createTextNode(post.title.slice(0, heartIndex)),
+        heart,
+        document.createTextNode(post.title.slice(heartIndex + '💔'.length))
+    );
+};
+
 const renderCards = (posts, container) => {
     const fragment = document.createDocumentFragment();
 
@@ -246,7 +266,7 @@ const renderCards = (posts, container) => {
         const info = document.createElement('div');
         info.className = 'card-info';
         const title = document.createElement('h3');
-        title.textContent = post.title;
+        appendPostTitle(title, post);
         const description = document.createElement('p');
         description.textContent = post.description;
         const footer = document.createElement('footer');
@@ -280,7 +300,7 @@ const renderRecentPosts = (posts, container) => {
         date.textContent = formatPostDate(post.date);
         const link = document.createElement('a');
         link.href = post.link;
-        link.textContent = post.title;
+        appendPostTitle(link, post);
         item.append(date, link);
         fragment.append(item);
     });
@@ -357,10 +377,10 @@ const renderPost = async (posts) => {
         return;
     }
 
-    heading.textContent = post.title;
+    appendPostTitle(heading, post);
     document.title = `${post.title} | Amin Guliyev`;
     document.querySelector('meta[name="description"]')?.setAttribute('content', post.description);
-    breadcrumbTitle.textContent = post.title;
+    appendPostTitle(breadcrumbTitle, post);
     meta.textContent = [formatPostDate(post.date), post.tag].filter(Boolean).join(' · ');
 
     try {

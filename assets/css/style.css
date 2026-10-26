@@ -244,6 +244,14 @@ body.rain-active #rain-canvas{
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.post-title-heart{
+    cursor: help;
+}
+
+.card-info h3 .post-title-heart{
+    display: inline;
+}
+
 .about-content p{
     color: rgb(230, 220, 220);
     font-family: Arial, Helvetica, sans-serif;
